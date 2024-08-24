@@ -33,6 +33,7 @@ CLASS zcl_abapgit_object_common_aff DEFINITION
         zcx_abapgit_exception.
 
   PROTECTED SECTION.
+
     TYPES: BEGIN OF ty_extension_mapper_pair,
              "! file extension
              extension        TYPE string,
@@ -58,6 +59,7 @@ CLASS zcl_abapgit_object_common_aff DEFINITION
         VALUE(ro_settings_deserialize) TYPE REF TO object.
 
   PRIVATE SECTION.
+
     METHODS is_file_empty
       IMPORTING
         io_object_json_file TYPE REF TO object
@@ -76,7 +78,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_abapgit_object_common_aff IMPLEMENTATION.
+CLASS ZCL_ABAPGIT_OBJECT_COMMON_AFF IMPLEMENTATION.
 
 
   METHOD constructor.
@@ -104,8 +106,9 @@ CLASS zcl_abapgit_object_common_aff IMPLEMENTATION.
     ENDTRY.
 
     IF lv_is_supported IS INITIAL.
-      zcx_abapgit_exception=>raise( |Object type { is_item-obj_type } is not supported by this system| ).
+      zcx_abapgit_exception=>raise( |JSON file of object type { is_item-obj_type } is not supported by this system| ).
     ENDIF.
+
 
   ENDMETHOD.
 

@@ -3,15 +3,21 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_ABAPGIT_OBJECT_XINX</CLSNAME>
+    <CLSNAME>ZCL_ABAPGIT_OBJECT_APLO</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>abapGit - XINX - Extension Index</DESCRIPT>
+    <DESCRIPT>abapGit - APLO - Application Log Object</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
-    <WITH_UNIT_TESTS>X</WITH_UNIT_TESTS>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_OBJECT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Application log: objects</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

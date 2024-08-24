@@ -378,7 +378,18 @@ CLASS zcl_abapgit_objects IMPLEMENTATION.
 
   METHOD class_name.
 
+    data lv_clsname  type seoclsname.
     CONCATENATE 'ZCL_ABAPGIT_OBJECT_' is_item-obj_type INTO rv_class_name.
+    if ZCL_ABAPGIT_FEATURE=>is_enabled( 'AFF' ) = abap_true.
+        CONCATENATE rv_class_name '_AFF' INTO lv_clsname.
+        try.
+           data(lo_result) = CL_OO_CLASS=>GET_INSTANCE( lv_clsname ).
+           if lo_result is bound.
+               rv_class_name = lv_clsname.
+           endif.
+          catch cx_class_not_existent ##NO_HANDLER.
+        endtry.
+    endif.
 
   ENDMETHOD.
 
